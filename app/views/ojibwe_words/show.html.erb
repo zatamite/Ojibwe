@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>English word:</strong>
+  <%= @ojibwe_word.english_word %>
+</p>
+
+<p>
+  <strong>Ojibwe translation:</strong>
+  <%= @ojibwe_word.ojibwe_translation %>
+</p>
+
+<p>
+  <strong>Word type:</strong>
+  <%= @ojibwe_word.word_type %>
+</p>
+
+<p>
+  <strong>Catagory:</strong>
+  <%= @ojibwe_word.catagory %>
+</p>
+
+<p>
+  <strong>Dictionary:</strong>
+  <%= @ojibwe_word.dictionary %>
+</p>
+
+<p>
+  <strong>Dialect locale:</strong>
+  <%= @ojibwe_word.dialect_locale %>
+</p>
+
+<%= link_to 'Edit', edit_ojibwe_word_path(@ojibwe_word) %> |
+<%= link_to 'Back', ojibwe_words_path %>

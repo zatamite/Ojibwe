@@ -1,0 +1,35 @@
+<h1>Listing ojibwe_words</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>English word</th>
+      <th>Ojibwe translation</th>
+      <th>Word type</th>
+      <th>Catagory</th>
+      <th>Dictionary</th>
+      <th>Dialect locale</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ojibwe_words.each do |ojibwe_word| %>
+      <tr>
+        <td><%= ojibwe_word.english_word %></td>
+        <td><%= ojibwe_word.ojibwe_translation %></td>
+        <td><%= ojibwe_word.word_type %></td>
+        <td><%= ojibwe_word.catagory %></td>
+        <td><%= ojibwe_word.dictionary %></td>
+        <td><%= ojibwe_word.dialect_locale %></td>
+        <td><%= link_to 'Show', ojibwe_word %></td>
+        <td><%= link_to 'Edit', edit_ojibwe_word_path(ojibwe_word) %></td>
+        <td><%= link_to 'Destroy', ojibwe_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Ojibwe word', new_ojibwe_word_path %>

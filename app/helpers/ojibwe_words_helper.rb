@@ -1,0 +1,2 @@
+module OjibweWordsHelper
+end

@@ -1,0 +1,16 @@
+<%= simple_form_for(@ojibwe_word) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :english_word %>
+    <%= f.input :ojibwe_translation %>
+    <%= f.input :word_type %>
+    <%= f.input :catagory %>
+    <%= f.input :dictionary %>
+    <%= f.input :dialect_locale %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
