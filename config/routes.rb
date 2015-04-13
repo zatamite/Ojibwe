@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'landings/index'
+
   resources :ojibwe_words
 
   devise_for :admin_users, ActiveAdmin::Devise.config
