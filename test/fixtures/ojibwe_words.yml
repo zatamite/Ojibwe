@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  english_word: MyString
+  ojibwe_translation: MyText
+  word_type: MyString
+  catagory: MyString
+  dictionary: MyString
+  dialect_locale: MyString
+
+two:
+  english_word: MyString
+  ojibwe_translation: MyText
+  word_type: MyString
+  catagory: MyString
+  dictionary: MyString
+  dialect_locale: MyString
