@@ -1,4 +1,5 @@
 ActiveAdmin.register OjibweWord do
+  permit_params :english_word, :ojibwe_translation, :word_type, :catagory, :dictionary, :dialect_locale
 
 
   # See permitted parameters documentation:
