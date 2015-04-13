@@ -1,16 +1,46 @@
-<%= simple_form_for(@ojibwe_word) do |f| %>
-  <%= f.error_notification %>
-
-  <div class="form-inputs">
-    <%= f.input :english_word %>
-    <%= f.input :ojibwe_translation %>
-    <%= f.input :word_type %>
-    <%= f.input :catagory %>
-    <%= f.input :dictionary %>
-    <%= f.input :dialect_locale %>
+<%= form_for @ojibwe_word, :html => { :class => 'form-horizontal form-model' } do |f| %>
+  <div class="form-group">
+    <%= f.label :english_word, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :english_word, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :ojibwe_translation, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_area :ojibwe_translation, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :word_type, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :word_type, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :catagory, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :catagory, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :dictionary, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :dictionary, :class => 'text-field form-control' %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :dialect_locale, :class => 'control-label col-md-2' %>
+    <div class="col-md-10">
+      <%= f.text_field :dialect_locale, :class => 'text-field form-control' %>
+    </div>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+  <div class="form-group">
+    <div class='col-md-offset-2 col-md-10'>
+      <%= f.submit nil, :class => 'btn btn-primary' %>
+      <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                  ojibwe_words_path, :class => 'btn btn-default' %>
+    </div>
   </div>
 <% end %>

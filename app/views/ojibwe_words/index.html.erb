@@ -1,35 +1,46 @@
-<h1>Listing ojibwe_words</h1>
-
-<table>
+<%- model_class = OjibweWord -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => OjibweWord %></h1>
+</div>
+<table class="table table-striped">
   <thead>
     <tr>
-      <th>English word</th>
-      <th>Ojibwe translation</th>
-      <th>Word type</th>
-      <th>Catagory</th>
-      <th>Dictionary</th>
-      <th>Dialect locale</th>
-      <th colspan="3"></th>
+      <th>ID</th>
+      <th><%= model_class.human_attribute_name(:english_word) %></th>
+      <th><%= model_class.human_attribute_name(:ojibwe_translation) %></th>
+      <th><%= model_class.human_attribute_name(:word_type) %></th>
+      <th><%= model_class.human_attribute_name(:catagory) %></th>
+      <th><%= model_class.human_attribute_name(:dictionary) %></th>
+      <th><%= model_class.human_attribute_name(:dialect_locale) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
-
   <tbody>
     <% @ojibwe_words.each do |ojibwe_word| %>
       <tr>
+        <td><%= ojibwe_word.id %></td>
         <td><%= ojibwe_word.english_word %></td>
         <td><%= ojibwe_word.ojibwe_translation %></td>
         <td><%= ojibwe_word.word_type %></td>
         <td><%= ojibwe_word.catagory %></td>
         <td><%= ojibwe_word.dictionary %></td>
         <td><%= ojibwe_word.dialect_locale %></td>
-        <td><%= link_to 'Show', ojibwe_word %></td>
-        <td><%= link_to 'Edit', edit_ojibwe_word_path(ojibwe_word) %></td>
-        <td><%= link_to 'Destroy', ojibwe_word, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%=l ojibwe_word.created_at, format: :long %></td>
+        <td>
+          <%= link_to ojibwe_word_path(ojibwe_word), :class => 'btn btn-xs', :title => "#{ t('.show', :default => t('helpers.links.show')) }" do %>
+            <%= glyph 'info-sign' %>
+            <%= glyph 'pencil' %>
+          <%- end -%>
+          <%= link_to ojibwe_word_path(ojibwe_word), :method => :delete, :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-xs', :title => "#{ t('.destroy', :default => t('helpers.links.destroy')) }" do %>
+            <%= glyph 'remove' %>
+          <%- end -%>
+        </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Ojibwe word', new_ojibwe_word_path %>
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_ojibwe_word_path,
+            :class => 'btn btn-primary' %>

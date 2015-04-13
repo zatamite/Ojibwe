@@ -1,6 +1,5 @@
-<h1>Editing ojibwe_word</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Show', @ojibwe_word %> |
-<%= link_to 'Back', ojibwe_words_path %>
+<%- model_class = OjibweWord -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => OjibweWord %></h1>
+</div>
+<%= render :partial => 'form' %>
